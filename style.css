@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    padding: 15px;
+    margin: auto;
+}
+.hero-image {
+    max-width: 600px;
+    margin-top: 90px;
+    padding-bottom: 100px;
+    position: relative;
+}
+.hero-image img {
+    width: 100%
+}
+.heart {
+    background: red;
+    width: 100px;
+    height: 100px;
+    top: 150px;
+    left: 264px;
+    position: absolute;
+    transform: rotate(45deg);
+    animation-name: heartbeat;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.heart::before {
+    content: "";
+    background: red;
+    width: 100px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: 0px;
+    border-radius: 100px;
+}
+.heart::after {
+    content: "";
+    background: red;
+    width: 100px;
+    height: 100px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: -50px;
+    border-radius: 100px;
+}
+
+@keyframes heartbeat {
+    0% {
+        scale: 1;
+    }
+    50% {
+        scale: 1.1;
+    }
+    100% {
+        scale: 1;
+    }
+}
+footer {
+    background: #000;
+    color: #fff;
+    padding: 15px;
+    font-family: poppins;
+}
+footer p {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 1100px;
+        margin: auto;
+    }
+    .hero-image {
+        max-width: 800px;
+        margin: 35px auto;
+    }
+    .heart {
+        width: 130px;
+        height: 130px;
+        top: 200px;
+        left: 340px;
+    }
+    .heart::before {
+        width: 130px;
+        height: 130px;
+        top: -65px;
+        left: 0px;
+    }
+    .heart::after {
+        width: 130px;
+        height: 130px;
+        top: 0px;
+        left: -65px;
+    }
+}
